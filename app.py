@@ -5,6 +5,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
 from openai import OpenAI
+from constants.prompts import BASE_PROMPT, PLOT_0
 
 app = FastAPI()
 
@@ -108,7 +109,7 @@ async def chat(input: ChatInput):
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a Dungeon Master in a D&D-inspired RPG. Use function calling for dice rolls when appropriate.",
+                    "content": BASE_PROMPT + PLOT_0,
                 },
                 {"role": "user", "content": input.message},
             ],
