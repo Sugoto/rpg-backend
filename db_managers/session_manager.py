@@ -1,6 +1,5 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson.objectid import ObjectId
-import asyncio
 
 client = AsyncIOMotorClient(
     "mongodb+srv://sugoto:1111@rpg.bhwib.mongodb.net/?retryWrites=true&w=majority&appName=rpg"
@@ -30,9 +29,3 @@ async def get_messages(user_id):
         return user.get("messages", [])
     else:
         return []
-
-
-# Test the function
-loop = asyncio.get_event_loop()
-messages = loop.run_until_complete(get_messages("5f7d1b1b8fd2b816c48c148b"))
-print(messages)

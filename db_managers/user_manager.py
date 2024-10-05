@@ -1,6 +1,4 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from bson.objectid import ObjectId
-import asyncio
 
 client = AsyncIOMotorClient(
     "mongodb+srv://sugoto:1111@rpg.bhwib.mongodb.net/?retryWrites=true&w=majority&appName=rpg"
